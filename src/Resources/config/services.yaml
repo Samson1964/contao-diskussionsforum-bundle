@@ -1,0 +1,34 @@
+# Service-Konfiguration des Diskussionsforum-Bundles.
+#
+# Konventionen (siehe CLAUDE.md):
+#   - Autowiring und Autoconfiguration sind standardmaessig aktiv, damit
+#     Contao-Hooks und DCA-Callbacks ueber Service-Tags bzw. PHP-Attribute
+#     registriert werden koennen (statt ueber die alte config.php).
+#   - Dienste sind standardmaessig privat (public: false); der Zugriff erfolgt
+#     ausschliesslich ueber Dependency Injection.
+#   - Eigene Dienste erhalten als Service-ID ein Namespace-Praefix
+#     ("schachbulle_contao_diskussionsforum.*"), um Kollisionen mit anderen
+#     Bundles zu vermeiden (Best Practice fuer wiederverwendbare Bundles).
+#   - Ausnahme: Controller duerfen direkt ueber ihre FQCN registriert werden.
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    # --- Eigene Dienste (EventListener, Hooks, Services, ...) -----------------
+    #
+    # Beispiel fuer einen Contao-Hook als Service. Dank "autoconfigure: true"
+    # genuegt das passende Tag bzw. PHP-Attribut - eine Registrierung in der
+    # config.php ist nicht noetig:
+    #
+    #   schachbulle_contao_diskussionsforum.listener.forum_beitrag:
+    #       class: Schachbulle\ContaoDiskussionsforumBundle\EventListener\ForumBeitragListener
+
+    # --- Controller (FQCN als Service-ID erlaubt) ----------------------------
+    #
+    #   Schachbulle\ContaoDiskussionsforumBundle\Controller\ForumController:
+    #       public: true
+    #       tags:
+    #           - { name: controller.service_arguments }

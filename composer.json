@@ -1,0 +1,50 @@
+{
+    "name": "schachbulle/contao-diskussionsforum-bundle",
+    "type": "contao-bundle",
+    "description": "Diskussionsforum fuer Contao 4.13 - Erweiterungs-Bundle des Schachbulle-Projekts.",
+    "keywords": [
+        "contao",
+        "forum",
+        "diskussion",
+        "community"
+    ],
+    "homepage": "https://github.com/Samson1964/contao-diskussionsforum-bundle",
+    "license": "LGPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Frank Binding",
+            "email": "hoppe.berlin@googlemail.com",
+            "homepage": "https://github.com/Samson1964",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "contao/core-bundle": "^4.13",
+        "symfony/config": "^5.4",
+        "symfony/dependency-injection": "^5.4",
+        "symfony/http-kernel": "^5.4",
+        "symfony/yaml": "^5.4"
+    },
+    "require-dev": {
+        "contao/easy-coding-standard": "^6.0",
+        "contao/manager-plugin": "^2.3.1",
+        "phpunit/phpunit": "^9.5"
+    },
+    "conflict": {
+        "contao/manager-plugin": "<2.0 || >=3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Schachbulle\\ContaoDiskussionsforumBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Schachbulle\\ContaoDiskussionsforumBundle\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "contao-manager-plugin": "Schachbulle\\ContaoDiskussionsforumBundle\\ContaoManager\\Plugin"
+    }
+}
