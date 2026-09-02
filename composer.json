@@ -1,6 +1,7 @@
 {
     "name": "schachbulle/contao-diskussionsforum-bundle",
     "type": "contao-bundle",
+    "abandoned": true,
     "description": "Diskussionsforum fuer Contao 4.13 - Erweiterungs-Bundle des Schachbulle-Projekts.",
     "keywords": [
         "contao",
