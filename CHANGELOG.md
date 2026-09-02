@@ -1,5 +1,7 @@
 # Diskussionsforum Changelog
 
+**Hinweis (2026-09-02):** Die Erweiterung wird nicht mehr weiterentwickelt. Das Repository ist auf GitHub archiviert.
+
 ## Version 0.0.1 (2026-06-28)
 
 * Initiale Version
